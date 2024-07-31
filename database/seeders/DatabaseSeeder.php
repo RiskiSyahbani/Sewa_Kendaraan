@@ -23,6 +23,13 @@ class DatabaseSeeder extends Seeder
             "password" => bcrypt("admin"),
             "is_admin" => true,
         ]);
+        User::factory()->create([
+            "name" => "Adam",
+            "username" => "adam",
+            "email" => "adam@gmail.com",
+            "password" => bcrypt("admin"),
+            "is_admin" => false,
+        ]);
 
         Tipe::factory()->create([
             "nama_tipe" => "Mini Bus"

@@ -7,6 +7,7 @@
                 <li class="nav-item"><a class="nav-link {{ ($active == 'home') ? 'text-primary' : '' }}" href="{{ URL::to('/') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link {{ ($active == 'daftar_mobil') ? 'text-primary' : '' }}" href="{{ URL::to('daftarmobil') }}">Daftar Mobil</a></li>
                 <li class="nav-item"><a class="nav-link {{ ($active == 'daftar_booking') ? 'text-primary' : '' }}" href="{{ URL::to('daftarbooking') }}">Daftar Booking</a></li>
+                <li class="nav-item"><a class="nav-link {{ ($active == 'login') ? 'text-primary' : '' }}" href="{{ URL::to('login') }}">Login</a></li>
             </ul>
         </div>
     </div>

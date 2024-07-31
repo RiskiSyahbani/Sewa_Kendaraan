@@ -3,7 +3,10 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DaftarMobilController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +30,25 @@ Route::get('/daftarbooking', [BookingController::class, 'index']);
 Route::get('/daftarbooking/edit/{id}', [BookingController::class, 'edit']);
 Route::post('/daftarbooking/save', [BookingController::class, 'saveedit']);
 Route::delete('/daftarbooking/hapus', [BookingController::class, 'delete']);
+
+Route::get('/login', [AuthController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::middleware('auth')->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('dashboard', 'index');
+        Route::get('home', 'index');
+        Route::get('dashboard/booking', 'viewbooking');
+    });
+});
+
+Route::middleware('admin')->group(function () {
+    Route::controller(DashboardController::class)->group(function() {
+        Route::get('dashboard/car', 'viewcar');
+        Route::get('dashboard/tipe', 'viewtipe');
+    });
+});
 
 
 
