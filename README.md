@@ -5,6 +5,7 @@
 ![preview img](/home.png)
 ![preview img](/daftarmobil.png)
 ![preview img](/daftarbooking.png)
+![preview img](/login.png)
 ![preview img](/dashboard.png)
 ![preview img](/booking.png)
 ![preview img](/cars.png)
